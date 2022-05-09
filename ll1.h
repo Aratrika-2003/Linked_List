@@ -9,8 +9,11 @@ typedef struct st
 
 node* create_node(int value);
 void append(node** head, int value);
-void traverse(node* head);
-void add(node* addhead,int val,int n);
+void traverse();
+//void add(node* addhead,int val,int n);
 void add_before(node** head,int ndata);
 void add_after(node* prev,int nval);
 void delete(node* prev);
+void print_reverse(node** pthead);
+void reverse(node** head);
+node* rec_rev(node* head);
