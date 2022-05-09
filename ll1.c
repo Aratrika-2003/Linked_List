@@ -90,3 +90,52 @@ void delete(node* prev)//to delete a node
     prev->next = temp->next;
     free(temp);
 }
+node* rec_rev(node* head)//recursively reversing the value in a linked list
+{
+    if(head != NULL)
+        return rec_rev(head->next);
+
+    printf("%d ",head->data);
+}
+
+void print_reverse(node** pthead)//printing the linked list in reverse order
+{
+    node* temp;
+    node* next;
+    node* prev;
+    if(*pthead == NULL || (*pthead)->next == NULL)
+    {
+        traverse(*pthead);
+        return;
+    }
+    prev = NULL;
+    temp = *pthead;
+    next = NULL;
+    while(temp != NULL)
+    {
+        temp = next;
+        prev = temp;
+        next = temp->next;
+        temp->next = prev;
+    }
+    *pthead = prev;
+
+    traverse(*pthead);
+}
+
+void reverse(node** head)//reverse the linked list
+{
+    node* current;
+    node* previous;
+    node* next;
+    previous = NULL;
+    current = *head;
+    while(current != NULL)
+    {
+        next = current->next;
+        current->next = previous;
+        previous = current;
+        current = next;
+    }
+    *head = previous;
+}
