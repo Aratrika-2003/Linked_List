@@ -65,7 +65,7 @@ void traverse_next(Node* pthead)
 
 void traverse_prev(Node* pttail)
 {
-	while(pttail)
+	while(pttail != NULL)
 	{
 		printf("%d ",pttail->data);
 		pttail = pttail->prev;
