@@ -156,14 +156,21 @@ void del_in_btw_aft(Node* head,int pos)
 	Node* pth = search_by_pos(head,pos);
 	
 	Node* temp = pth->next;
-	temp->next->prev = pth;
-	pth->next = temp->next;
+	if(pos->next != NULL)
+	{
+		temp->next->prev = pth;
+		pth->next = temp->next;
+	}
 }
 
 void del_in_btw_bef(Node* tail,int pos)
 {
 	Node* pttail = search_by_pos(tail,pos);
 	Node* temp = pttail->prev;
-	temp->prev->next = pttail;
-	pttail->prev = temp->prev;
+	if(pos->next != NULL)
+	{
+		
+		temp->prev->next = pttail;
+		pttail->prev = temp->prev;
+	}
 }
