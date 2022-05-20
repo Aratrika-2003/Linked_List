@@ -133,7 +133,7 @@ Node* search_by_pos(Node* pthead, int pos)
 	
 	if(pthead != NULL)
 	{
-		head = head->next;
+		pthead = pthead->next;
 		c++;
 	}
 	
@@ -148,7 +148,7 @@ Node* search_by_pos(Node* pthead, int pos)
 		pthead = pthead->next;
 	}
 	
-	return head;
+	return pthead;
 }
 
 void del_in_btw_aft(Node* head,int pos)
