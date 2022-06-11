@@ -1,3 +1,5 @@
+//recursive functions for preorder,inorder and postorder traversals
+
 #include<stdio.h>
 #define ITEM int
 typedef struct t
@@ -6,7 +8,7 @@ typedef struct t
     struct t *left;
     struct t *right;
 }tree;
-
+/*PRE - root->left->right*/
 void preorder(tree* root)
 {
     if(root == NULL)
@@ -16,7 +18,7 @@ void preorder(tree* root)
     preorder(root->left);
     preorder(root->right);
 }
-
+/*IN - left->root->right*/
 void inorder(tree* root)
 {
     if(root == NULL)
@@ -26,7 +28,7 @@ void inorder(tree* root)
     printf("%d ",root->data);
     inorder(root->right);
 }
-
+/*POST - left->right->root*/
 void postorder(tree* root)
 {
     if(root == NULL)
