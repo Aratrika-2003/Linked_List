@@ -16,8 +16,8 @@ void display_level(tree* root,int level)
         printf("%d ",root->data);
     else if(level > 1)
     {
-        return display_level(root->left,level - 1);
-        return display_level(root->right,level - 1);
+        display_level(root->left,level - 1);
+        display_level(root->right,level - 1);
     }
 }
 
