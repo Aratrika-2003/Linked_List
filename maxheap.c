@@ -58,9 +58,9 @@ void insert(maxheap* max,item val)//enqueue
         }
     }
 }
-item delete(maxheap* max,item val)//dequeue
+item delete(maxheap* max)//dequeue
 {
-    item child,parent,t;
+    item child,parent,t,val;
 
     if(isempty(max))
         return 0;
@@ -97,13 +97,26 @@ void display(maxheap* max)
 int main()
 {
     maxheap q;
-    int size,ch,key;
-    printf("\nEnter the size of the array ");
-    scanf("%d",&size);
-
-    init(&q,size);
-
-    do
+   
+    init(&q,7);
+    
+    insert(&q,98);
+    insert(&q,9);
+    insert(&q,48);
+    insert(&q,10);
+    insert(&q,2);
+    insert(&q,64);
+    insert(&q,50);
+    
+    printf("\nThe deleted items - ");
+    delete(&q);
+    delete(&q);
+    delete(&q);
+    delete(&q);
+    delete(&q);
+    delete(&q);
+  
+    /*do
     {
         printf("\nPress 1 for insertion and 2 for deletion.\n");
         printf("\nEnter choice! ");
@@ -129,7 +142,7 @@ int main()
             default:
                 break;
         }
-    } while (ch != 3);
+    } while (ch != 3);*/
     
     return 0;
 }
