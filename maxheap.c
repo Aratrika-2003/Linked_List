@@ -108,13 +108,13 @@ int main()
     insert(&q,64);
     insert(&q,50);
     
-    printf("\nThe deleted items - ");
-    delete(&q);
-    delete(&q);
-    delete(&q);
-    delete(&q);
-    delete(&q);
-    delete(&q);
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
   
     /*do
     {
