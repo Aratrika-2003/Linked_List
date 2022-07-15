@@ -58,9 +58,9 @@ void insert(minheap* min,item val)//enqueue
         }
     }
 }
-item delete(minheap* min,item val)//dequeue
+item delete(minheap* min)//dequeue
 {
-    item child,parent,t;
+    item child,parent,t,val;
 
     if(isempty(min))
         return 0;
@@ -97,39 +97,29 @@ void display(minheap* min)
 int main()
 {
     minheap q;
-    int size,ch,key;
-    printf("\nEnter the size of the array ");
-    scanf("%d",&size);
-
-    init(&q,size);
-
-    do
-    {
-        printf("\nPress 1 for insertion and 2 for deletion.\n");
-        printf("\nEnter choice! ");
-        scanf("%d",&ch);
-        switch(ch)
-        {
-            case 1:
-            printf("\nEnter a number to insert - ");
-            scanf("%d",&key);
-            insert(&q,key);
-            printf("\nThe key is inserted ");
-            display(&q);
-            break;
-
-            case 2:
-            printf("\nEnter a number to delete - ");
-            scanf("%d",&key);
-            delete(&q,key);
-            printf("\nThe key is deleted ");
-            display(&q);
-            break;
-
-            default:
-                break;
-        }
-    } while (ch != 3);
+    
+    init(&q,7);
+    
+    insert(&q,98);
+    insert(&q,9);
+    insert(&q,48);
+    insert(&q,10);
+    insert(&q,2);
+    insert(&q,64);
+    insert(&q,50);
+    
+    display(&q);
+    
+    printf("\n");
+    
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+    printf("\nThe deleted items - %d ",delete(&q));
+  
     
     return 0;
 }
